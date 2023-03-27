@@ -14,9 +14,7 @@
 * [Contact](#contact)
 
 ## General Information
-Hammy & Fitch is a recreation of [Abercrombie and Fitch's](https://www.abercrombie.com/shop/us) eCommerce website, emulating both the shoppers' and managers' experience/functionality. 
-
-Through recreating a smooth front-end user experience with challenging CSS design, as well as back-end databases, I chose to recreate a website from an established brand to challenge myself as a full-stack software developer.
+Full stack music application designed for music enthusiasts to review and track their favorite music. Developed utilizing Java, Spring Boot, JPA, and MySQL.
 
 <br>
 
