@@ -1,6 +1,6 @@
 ![](./site_images/github-header-image.png)
 
-#### Hammy & Fitch - a recreation of [Abercrombie and Fitch's](https://www.abercrombie.com/shop/us) e-Commerce website
+#### TideTunes - a music application designed for music enthusiasts
 <!-- > Live demo [_here_](https://www.example.com). -->
 
 ## Table of Contents
