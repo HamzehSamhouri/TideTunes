@@ -1,4 +1,4 @@
-![](./site_images/Hammy&Fitch-header-image.png)
+![](./site_images/github-header-image.png)
 
 #### Hammy & Fitch - a recreation of [Abercrombie and Fitch's](https://www.abercrombie.com/shop/us) e-Commerce website
 <!-- > Live demo [_here_](https://www.example.com). -->
