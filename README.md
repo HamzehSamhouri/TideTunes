@@ -1,3 +1,9 @@
+clientID: c864e0c624d447d08a714efe248a3c06
+
+clientsecret:efac21db599d4887a53900262daa3ceb
+
+
+
 ![](./site_images/github-header-image.png)
 
 #### TideTunes - a music application designed for music enthusiasts
