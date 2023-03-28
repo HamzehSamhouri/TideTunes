@@ -1,7 +1,11 @@
 import { useState, useEffect } from "react"
-import useAuth from "../useAuth"
-import Player from "../Player"
-import TrackSearchResult from "../TrackSearchResult"
+
+
+import useAuth from "../components/useAuth"
+import Player from "../components/Player"
+import TrackSearchResult from "../components/TrackSearchResult"
+
+
 import { Container, Form } from "react-bootstrap"
 import SpotifyWebApi from "spotify-web-api-node"
 import axios from "axios"
