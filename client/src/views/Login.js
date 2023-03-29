@@ -6,13 +6,14 @@ const AUTH_URL =
 
 export default function Login() {
   return (
-    <Container
-      className="d-flex justify-content-center align-items-center"
-      style={{ minHeight: "100vh" }}
-    >
+    <div className="body">
+    <Container className="d-flex flex-column justify-content-center login">
+        <h1>TideTunes</h1>
       <a className="btn btn-success btn-lg" href={AUTH_URL}>
         Login With Spotify
       </a>
     </Container>
+    </div>
+    
   )
 }

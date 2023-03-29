@@ -5,6 +5,8 @@ import useAuth from "../components/useAuth"
 import Player from "../components/Player"
 import TrackSearchResult from "../components/TrackSearchResult"
 
+import ReviewForm from "../components/ReviewForm"
+import ReviewList from "../components/ReviewList"
 
 import { Container, Form } from "react-bootstrap"
 import SpotifyWebApi from "spotify-web-api-node"
@@ -19,28 +21,24 @@ export default function Dashboard({ code }) {
   const [search, setSearch] = useState("")
   const [searchResults, setSearchResults] = useState([])
   const [playingTrack, setPlayingTrack] = useState()
-  const [lyrics, setLyrics] = useState("")
+  
+  const [review, setReview] = useState([]);
+  const [loaded, setLoaded] = useState(false);
+
+  useEffect(()=>{
+    axios.get('http://localhost:8000/api/reviews')
+        .then(res=>{
+            setReview(res.data);
+            setLoaded(true);
+        })
+        .catch(err => console.error(err));
+},[]);
+
 
   function chooseTrack(track) {
     setPlayingTrack(track)
     setSearch("")
-    setLyrics("")
   }
-
-  useEffect(() => {
-    if (!playingTrack) return
-
-    axios
-      .get("http://localhost:3001/lyrics", {
-        params: {
-          track: playingTrack.title,
-          artist: playingTrack.artist,
-        },
-      })
-      .then(res => {
-        setLyrics(res.data.lyrics)
-      })
-  }, [playingTrack])
 
   useEffect(() => {
     if (!accessToken) return
@@ -78,7 +76,12 @@ export default function Dashboard({ code }) {
   }, [search, accessToken])
 
   return (
-    <Container className="d-flex flex-column py-2" style={{ height: "100vh" }}>
+    <div className="body">
+      <h1 className="logo">Tide Tunes</h1>
+      <div className="dashboard">
+
+    <div className="player">
+    <Container className="d-flex flex-column py-2" style={{ height: "92vh" }}>
       <Form.Control
         type="search"
         placeholder="Search Songs/Artists"
@@ -93,15 +96,17 @@ export default function Dashboard({ code }) {
             chooseTrack={chooseTrack}
           />
         ))}
-        {searchResults.length === 0 && (
-          <div className="text-center" style={{ whiteSpace: "pre" }}>
-            {lyrics}
-          </div>
-        )}
       </div>
       <div>
         <Player accessToken={accessToken} trackUri={playingTrack?.uri} />
       </div>
     </Container>
+    </div>
+    <div className="reviewdashboard">
+    {loaded && <ReviewList review={review}/>}
+    <ReviewForm/>
+    </div>
+    </div>
+      </div>
   )
 }

@@ -1,0 +1,129 @@
+.body {
+    width: 100vw;
+    height: 100vh;
+    margin: 0 auto;
+    background: linear-gradient(-45deg, #182b3a, #23a6d5, #734ae8, #89d4cf, #23d5ab);
+    background-size: 400% 400%;
+    animation: gradient 10s ease infinite;
+    color: white;
+}
+
+.login {
+    min-height: 100vh;
+}
+
+@keyframes gradient {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+/** LOGO **/
+.login h1 {
+    margin-bottom: 50px;
+}
+h1 {
+    text-align: center;
+}
+
+/*** BUTTON **/
+.btn {
+    margin: 8px 0;
+    width: 100%;
+    background-color: #23a6d5;
+    color: white;
+}
+
+.btn:hover {
+    border: 1px solid #23a6d5;
+    color: white;
+    background: repeating-linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+    background-size: 400% 400%;
+    animation: gradient 4s linear infinite;
+}
+
+.dashboard{
+    display: flex;
+    height: 92vh;
+}
+
+.player{
+    width: 50vw;
+}
+
+
+
+/** REVIEW DASHBOARD **/
+.reviewdashboard{
+    width: 50vw;
+    padding: 40px;
+    margin: 0 auto;
+    display: inline-block;
+}
+
+input[type=text],
+input[type=date],
+select,
+input[type=number] {
+    width: 100%;
+    padding: 12px 0px;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    color: #253746;
+    font-size: larger;
+    text-indent: 15px;
+
+}
+
+input[type=submit] {
+    background-color: #253746;
+    width: 100%;
+    height: 5vh;
+    border: none;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    font-size: 16px;
+    transition-duration: 0.4s;
+    cursor: pointer;
+    border: 2px solid #253746;
+    font-size: larger;
+    margin-bottom: 15px;
+    border-radius: 4px;
+}
+
+input[type=submit]:hover {
+    background-color: white;
+    color: #253746;
+}
+
+/* FLASH ERROR MESSAGE */
+.error {
+    color: white;
+    margin-bottom: 10px;
+    animation: blinker 0.2s linear 3;
+    font-family: 'Gothic A1', sans-serif;
+}
+
+@keyframes blinker {
+    50% {
+        opacity: 0;
+    }
+}
+
+
+.logo{
+    background-color: white;
+    padding: 10px;
+    color: #182b3a;
+}
