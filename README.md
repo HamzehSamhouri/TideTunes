@@ -54,7 +54,7 @@ Dashboard
 Project requirements/dependencies for server and client are located within designated  package-lock.json and package.json files. 
 
         cd server
-        npm install express cors mongoose dotenv spotify-web-api-node
+        npm install express cors mongoose dotenv spotify-web-api-node body-parser
         nodemon server.js
         nodemon reviewserver.js
 
