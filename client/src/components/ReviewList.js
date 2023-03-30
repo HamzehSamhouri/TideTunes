@@ -19,14 +19,16 @@ const ReviewList = (props) => {
 // PAGE RENDER
     return (
         <div>
-            <h1 className='stickyheader'>All Reviews</h1>
+            <h1 className='reviewsheader'>All Reviews</h1>
             {props.reviews && props.reviews.map((review, idx) =>
                 <div key={idx}>
-                    <p>{review.title}</p>
-                    <p>{review.category}</p>
-                    <p>{review.rating}</p>
+                    <hr/>
+                    <h4>Track/Album: {review.title}</h4>
+                    <p>Category: {review.category}</p>
+                    <p>Rating: {review.rating}</p>
                     <p>{review.review}</p>
-                    <button className='delete' onClick={(e) => { deleteReview(review._id) }}>Delete</button>
+                    {/* <button className='delete' onClick={(e) => { deleteReview(review._id) }}>Delete</button> */}
+                    <hr/>
                 </div>
             )}
         </div>

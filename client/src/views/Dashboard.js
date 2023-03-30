@@ -119,6 +119,7 @@ export default function Dashboard({ code }) {
           <div className="flex-grow-1 my-2" style={{ overflowY: "auto", maxHeight: "300px", minHeight: "300px" }}>
             {loaded && <ReviewList reviews={review} removeFromDom={removeFromDom} />}
           </div>
+          <hr/>
           <div className="flex-grow-1 my-2" style={{ overflowY: "auto", maxHeight: "520px" }}>
           <ReviewForm createNewReview={createNewReview}/>
           </div>
