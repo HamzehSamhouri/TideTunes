@@ -60,13 +60,13 @@ const ReviewForm = (props) => {
             </p>
             <p>
                 <label>Rating:</label>
-                <input type="number" min={0} max={5} onChange={(e) => setRating(e.target.value)} value={rating}/>
+                <input type="number" min={1} max={5} onChange={(e) => setRating(e.target.value)} value={rating}/>
             </p>
             <p>
                 <label>Review:</label>
                 <input type="text" onChange={(e) => setReview(e.target.value)} value={review}/>
             </p>
-            <input className='button space' type="submit" value="Create" />
+            <input className='btn' type="submit" value="Create" />
         </form>
     )
 }

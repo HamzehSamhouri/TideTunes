@@ -1,3 +1,14 @@
+@import url("https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900");
+
+
+*{
+    cursor: url(https://img.icons8.com/material-outlined/24/182b3a/music--v1.png), auto;
+}
+
+*:active{
+    cursor: url(https://img.icons8.com/material-outlined/24/FFFFFF/music--v1.png), auto;
+}
+
 .body {
     width: 100vw;
     height: 100vh;
@@ -6,32 +17,83 @@
     background-size: 400% 400%;
     animation: gradient 10s ease infinite;
     color: white;
-}
-
-.login {
-    min-height: 100vh;
+    border: transparent dashed 1px;
 }
 
 @keyframes gradient {
     0% {
         background-position: 0% 50%;
     }
-
+    
     50% {
         background-position: 100% 50%;
     }
-
+    
     100% {
         background-position: 0% 50%;
     }
 }
 
-/** LOGO **/
-.login h1 {
-    margin-bottom: 50px;
+.login {
+    min-height: 100vh;
 }
-h1 {
-    text-align: center;
+
+/** LOGO **/
+.content {
+    margin: 0 auto;
+    margin-bottom: 60px;
+    display: flex;
+    font-family: "Poppins", sans-serif;
+}
+
+.content h2 {
+    color: #fff;
+    font-size: 8em;
+    position: absolute;
+    transform: translate(-50%, -50%);
+}
+
+.content h2:nth-child(1) {
+    color: transparent;
+    -webkit-text-stroke: 2px #182b3a;
+}
+
+.content h2:nth-child(2) {
+    color: #182b3a;
+    animation: animate 6s ease-in-out infinite;
+}
+
+@keyframes animate {
+
+    0%,
+    100% {
+        clip-path: polygon(0% 45%,
+                16% 44%,
+                33% 50%,
+                54% 60%,
+                70% 61%,
+                84% 59%,
+                100% 52%,
+                100% 100%,
+                0% 100%);
+    }
+
+    50% {
+        clip-path: polygon(0% 60%,
+                15% 65%,
+                34% 66%,
+                51% 62%,
+                67% 50%,
+                84% 45%,
+                100% 46%,
+                100% 100%,
+                0% 100%);
+    }
+}
+
+.logo {
+    margin-top: 60px;
+    margin-left: 50vw;
 }
 
 /*** BUTTON **/
@@ -40,34 +102,55 @@ h1 {
     width: 100%;
     background-color: #23a6d5;
     color: white;
+    border: 0.1px solid rgba(255, 255, 255, 0.642);
 }
 
 .btn:hover {
-    border: 1px solid #23a6d5;
+    border: 0.1px solid rgba(255, 255, 255, 0.642);
     color: white;
     background: repeating-linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
     background-size: 400% 400%;
     animation: gradient 4s linear infinite;
+    border: 1px solid white;
+    cursor: url(https://img.icons8.com/material-outlined/24/FFFFFF/music--v1.png), auto;
 }
 
-.dashboard{
+.btn:active {
+    cursor: url(https://img.icons8.com/material-outlined/24/182b3a/music--v1.png), auto;
+}
+
+/** DASHBOARD **/
+.dashboard {
     display: flex;
-    height: 92vh;
 }
 
-.player{
+.player {
     width: 50vw;
 }
 
-
+.muted{
+    color: rgba(255, 255, 255, 0.633);
+}
 
 /** REVIEW DASHBOARD **/
-.reviewdashboard{
+.reviewdashboard {
     width: 50vw;
-    padding: 40px;
+    padding: 0px 40px;
     margin: 0 auto;
     display: inline-block;
     border-left: 0.1px dashed white;
+}
+
+.stickyheader {
+    position: sticky;
+    top: 0;
+    text-align: center;
+}
+
+/** FORM **/
+
+form h1 {
+    text-align: center;
 }
 
 input[type=text],
@@ -86,45 +169,15 @@ input[type=number] {
     color: #182b3a;
 }
 
-input[type=submit] {
-    background-color: #253746;
-    width: 100%;
-    height: 5vh;
-    border: none;
-    color: white;
-    text-align: center;
-    text-decoration: none;
-    font-size: 16px;
-    transition-duration: 0.4s;
-    cursor: pointer;
-    border: 2px solid #253746;
-    font-size: larger;
-    margin-bottom: 15px;
-    border-radius: 4px;
-}
-
-input[type=submit]:hover {
-    background-color: white;
-    color: #253746;
-}
-
-/* FLASH ERROR MESSAGE */
+/** FLASH ERROR MESSAGE **/
 .error {
     color: white;
     margin-bottom: 10px;
-    animation: blinker 0.2s linear 3;
-    font-family: 'Gothic A1', sans-serif;
+    animation: blinker 0.2s linear 5;
 }
 
 @keyframes blinker {
     50% {
         opacity: 0;
     }
-}
-
-
-.logo{
-    background-color: white;
-    padding: 10px;
-    color: #182b3a;
 }

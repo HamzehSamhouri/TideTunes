@@ -19,7 +19,7 @@ const ReviewList = (props) => {
 // PAGE RENDER
     return (
         <div>
-            <h1>All Reviews</h1>
+            <h1 className='stickyheader'>All Reviews</h1>
             {props.reviews && props.reviews.map((review, idx) =>
                 <div key={idx}>
                     <p>{review.title}</p>
