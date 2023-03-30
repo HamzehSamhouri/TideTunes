@@ -5,11 +5,11 @@ const ReviewList = (props) => {
     const [search, setSearch] = useState("");
 
 
-    //! REMOVE FROM DOM 
+//! REMOVE FROM DOM 
     const { removeFromDom } = props;
     // console.log(props.reviews)
 
-    //! BACKEND CALL TO DELETE ONE 
+//! BACKEND CALL TO DELETE ONE 
     const deleteReview = (reviewId) => {
         axios.delete('http://localhost:8000/api/review/' + reviewId)
             .then(res => {
@@ -18,7 +18,7 @@ const ReviewList = (props) => {
             .catch(err => console.error("Catch Error:", err));
     }
 
-    //! PAGE RENDER
+//! PAGE RENDER
     return (
         <div className='reviewlist'>
             <div className='searchparameters'>

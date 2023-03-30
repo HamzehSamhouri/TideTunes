@@ -1,5 +1,6 @@
 const mongoose = require('mongoose')
 
+//! DATABASE NAME 
 const database = 'TideTunes'
 
 mongoose.set("strictQuery", true);

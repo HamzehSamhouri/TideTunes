@@ -1,5 +1,6 @@
 const mongoose = require('mongoose');
 
+//! REVIEW SCHEMA
 const ReviewSchema = new mongoose.Schema({
     title: {
         type: String,

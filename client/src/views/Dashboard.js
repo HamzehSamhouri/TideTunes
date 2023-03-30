@@ -1,13 +1,9 @@
 import { useState, useEffect } from "react"
-
-
 import useAuth from "../components/useAuth"
 import Player from "../components/Player"
 import TrackSearchResult from "../components/TrackSearchResult"
-
 import ReviewForm from "../components/ReviewForm"
 import ReviewList from "../components/ReviewList"
-
 import { Container, Form } from "react-bootstrap"
 import SpotifyWebApi from "spotify-web-api-node"
 import axios from "axios"
@@ -25,6 +21,7 @@ export default function Dashboard({ code }) {
   const [review, setReview] = useState([]);
   const [loaded, setLoaded] = useState(false);
 
+  //! GET ALL REVIEWS
   useEffect(() => {
     axios.get('http://localhost:8000/api/reviews')
       .then(res => {
@@ -39,16 +36,17 @@ export default function Dashboard({ code }) {
       .catch(err => console.error(err));
   }, []);
 
+  const createNewReview = (newReview) => {
+    setReview([...review, newReview]);
+  }
 
+//! DELETE 
   // FILTER OUT AFTER DELETE
   const removeFromDom = reviewId => {
     setReview(review.filter(review => review._id !== reviewId));
   }
 
-  const createNewReview = (newReview) => {
-    setReview([...review, newReview]);
-  }
-
+//! SPOTIFY API 
   function chooseTrack(track) {
     setPlayingTrack(track)
     setSearch("")
@@ -89,6 +87,8 @@ export default function Dashboard({ code }) {
     return () => (cancel = true)
   }, [search, accessToken])
 
+
+//! PAGE RENDER 
   return (
     <div className="body">
       <div className="logo content">

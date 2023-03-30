@@ -2,21 +2,21 @@ const ReviewController = require('../controllers/review.controller');
 module.exports = function(app){
 
 
-// TEST INDEX
+//! TEST INDEX
     app.get('/api/', ReviewController.index);
 
-//Create
+//! CREATE
     app.post('/api/new/review', ReviewController.createReview);
 
-//Read All
+//! READ ALL
     app.get("/api/reviews", ReviewController.allReviews);
 
-//Read One
+//! READ ONE
     app.get("/api/review/:id", ReviewController.oneReview);
 
-// Update
+//! UPDATE
     app.put('/api/review/:id', ReviewController.updateReview);
 
-// Delete
+//! DELETE
 app.delete('/api/review/:id', ReviewController.deleteReview);
 }

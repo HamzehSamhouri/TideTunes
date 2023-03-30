@@ -1,3 +1,4 @@
+//! IMPORTS 
 require("dotenv").config()
 const express = require("express")
 const cors = require("cors")
@@ -9,6 +10,8 @@ app.use(cors())
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({ extended: true }))
 
+
+//! SPOTIFY API 
 app.post("/refresh", (req, res) => {
   const refreshToken = req.body.refreshToken
   const spotifyApi = new SpotifyWebApi({
@@ -54,7 +57,6 @@ app.post("/login", (req, res) => {
     })
 })
 
-
+//! PORT 3001 
 const port = 3001;
-
 app.listen(port, () => console.log(`Listening on port: ${port}`))

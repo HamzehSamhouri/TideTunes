@@ -6,6 +6,8 @@ export default function TrackSearchResult({ track, chooseTrack }) {
   }
 
   return (
+  
+//! PAGE RENDER
     <div
       className="d-flex m-2 align-items-center"
       style={{ cursor: "pointer" }}

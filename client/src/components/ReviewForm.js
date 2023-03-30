@@ -10,12 +10,11 @@ const ReviewForm = (props) => {
     const [review, setReview] = useState("");
 
 
-// ERRORS
+//! ERRORS
     const [errors, setErrors] = useState([]);
 
 
-
-// BACKEND CALL TO CREATE 
+//! BACKEND CALL TO CREATE 
     const onSubmitHandler = e => {
         e.preventDefault();
         axios.post('http://localhost:8000/api/new/review', {
@@ -31,7 +30,7 @@ const ReviewForm = (props) => {
                 setReview("")
             })
 
-// ERROR MESSAGES
+//! ERROR MESSAGES
             .catch(err => {
                 const errorResponse = err.response.data.errors;
                 const errorArr = [];
@@ -42,7 +41,7 @@ const ReviewForm = (props) => {
             })
     }
 
-// PAGE RENDER
+//! PAGE RENDER
     return (
         <form onSubmit={onSubmitHandler}>
             {errors.map((err, index) => <p className='error' key={index}>{err}</p>)}

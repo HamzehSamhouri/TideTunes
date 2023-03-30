@@ -8,6 +8,8 @@ export default function Player({ accessToken, trackUri }) {
 
   if (!accessToken) return null
   return (
+
+//! PAGE RENDER 
     <SpotifyPlayer
       token={accessToken}
       showSaveIcon
