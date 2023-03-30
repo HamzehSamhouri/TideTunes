@@ -84,7 +84,7 @@ Room for improvement:
 To do:
 - CSS responsiveness
 
-- Incorproate results from ***Spotify API*** into review form for ease of use
+- Incorporate results from ***Spotify API*** into review form for ease of use
 
 - Allow users to click on review title to play songs on ***Spotify API***
 
