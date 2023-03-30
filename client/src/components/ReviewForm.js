@@ -24,6 +24,11 @@ const ReviewForm = (props) => {
             .then(res => {
                 // console.log(res.data);
                 props.createNewReview(res.data);
+                setTitle("")
+                setArtist("")
+                setCategory("")
+                setRating("")
+                setReview("")
             })
 
 // ERROR MESSAGES
@@ -40,19 +45,18 @@ const ReviewForm = (props) => {
 // PAGE RENDER
     return (
         <form onSubmit={onSubmitHandler}>
-            <h1>New Review</h1>
             {errors.map((err, index) => <p className='error' key={index}>{err}</p>)}
             <p>
                 <label>Title:</label>
                 <input type="text" onChange={(e) => setTitle(e.target.value)} value={title}/>
             </p>
             <p>
-                <label>Artist(s):</label>
+                <label>Artist:</label>
                 <input type="text" onChange={(e) => setArtist(e.target.value)} value={artist}/>
             </p>
             <p>
             <label>Category:</label>
-            <select onChange={(e) => setCategory(e.target.value)}>
+            <select  onChange={(e) => setCategory(e.target.value)}>
                     <option></option>
                     <option value={"Album"}>Album</option>
                     <option value={"Single"}>Single</option>
@@ -60,7 +64,7 @@ const ReviewForm = (props) => {
             </p>
             <p>
                 <label>Rating:</label>
-                <input type="number" min={1} max={5} onChange={(e) => setRating(e.target.value)} value={rating}/>
+                <input type="number" min={1} max={5} placeholder="1 - 5 stars" onChange={(e) => setRating(e.target.value)} value={rating}/>
             </p>
             <p>
                 <label>Review:</label>

@@ -1,6 +1,6 @@
 ![](./site_images/github-header-image.png)
 
-#### TideTunes - a music application designed for music enthusiasts
+#### TideTunes - a MERN music application designed for music enthusiasts
 <!-- > Live demo [_here_](https://www.example.com). -->
 
 ## Table of Contents
@@ -14,12 +14,13 @@
 * [Contact](#contact)
 
 ## General Information
-Full stack music application designed for music enthusiasts to review and track their favorite music. Developed utilizing Java, Spring Boot, JPA, and MySQL.
+Full stack music application designed for music enthusiasts to review and track their favorite music. Developed utilizing the ***Spotify API***, MongoDB, Express React and Node.
 
 <br>
 
 
 ## Technologies Used
+* [***Spotify API***](https://developer.spotify.com/)
 * [Javascript](https://www.javascript.com/)
 * [React.js](https://reactjs.org/)
 * [Express](https://expressjs.com/)
@@ -32,51 +33,33 @@ Full stack music application designed for music enthusiasts to review and track 
 
 ## Features
 ### User
-- Homepage view, Promotion Detail view (planned functionality), and Cart view (planned functionality)
-- Designated Men's and Women's clothing sections with functional search bar and filters 
-- Clothing detail section with "Add to Cart" button (planned functionality)
-### Manager
-- Manager portal where all clothing items are displayed and can be filtered through
-- New product form
-- Edit and/or delete items
-
-
+- *Login Page* that utilizes Spotify's login and authorization.
+- All encompassing *Dashboard* where users can search for and play their favorite songs utilizing the ***Spotify API***, as well as leave a review (with active validations).
+- Functional filter options for list of posted reviews. 
+xw
 <br>
 
 
 ## Screenshots
 ### User Interface
-Main homepage
-![Homepage Part 1](./site_images/Homepage1.png)
-![Homepage Part 2](./site_images/Homepage2.png)
-![Homepage Part 3](./site_images/Homepage3.png)
+Login
+![Login](./site_images/login.png)
+![Spotify Login](./site_images/spotifyauth.png)
 
-Clothing Section with functional search bar and filters
-![Mens Clothing Section](./site_images/MensClothing.png)
-
-Clothing detail page where user can view images, pricing, descriptions, as well as _add to cart_  
-![Clothing Details Part 1](./site_images/ClothingDetail1.png)
-![Clothing Details Part 2](./site_images/ClothingDetail2.png)
-
-### Manager Interface
-Manager Portal where new clothing items can be added, all clothes are displayed with options to edit and delete items.
-![Manager Portal ](./site_images/Managersite.png)
-New Product Form
-![New Product ](./site_images/NewProduct.png)
-
-
-<br>
+Dashboard
+![Dashboard](./site_images/dashboard.png)
 
 
 ## Setup and Usage
 Project requirements/dependencies for server and client are located within designated  package-lock.json and package.json files. 
 
         cd server
-        npm install express cors mongoose
+        npm install express cors mongoose dotenv spotify-web-api-node
         nodemon server.js
+        nodemon reviewserver.js
 
         cd client
-        npm install react-bootstrap bootstrap axios react-router-dom
+        npm install react-bootstrap bootstrap axios react-router-dom spotify-web-api-node
         npm run start
 
 
@@ -101,17 +84,11 @@ Room for improvement:
 To do:
 - CSS responsiveness
 
-- User _myAbercrombie_ login and registration pages
-![User Registration](./site_images/UserRegistration.png)
+- Incorproate results from ***Spotify API*** into review form for ease of use
 
-- Manager login page so that the manager portal is secure
-![Manager Registration](./site_images/ManagerPortal.png)
+- Allow users to click on review title to play songs on ***Spotify API***
 
-- Functional _Add to Cart_ button and Cart page. Upon checkout item quantity will be reduced (once quantity reaches 0 item temporarily hidden from site)
-![Cart](./site_images/Cart.png)
-
-- Functional _Promotion Details_ page where manager can add, edit, and delete promotions
-![Promotion Details](./site_images/Promotions.png)
+- Allow users to cycle through their Spotify Playlists
 
 <br>
 

@@ -31,6 +31,10 @@ export default function Dashboard({ code }) {
         // console.log(res.data.results)
         setReview(res.data.results);
         setLoaded(true);
+        res.data.results.sort((a, b) => {
+              if (b.rating < a.rating) return -1;
+              if (b.rating > a.rating) return 1;
+      })
       })
       .catch(err => console.error(err));
   }, []);
@@ -116,12 +120,14 @@ export default function Dashboard({ code }) {
           </Container>
         </div>
         <div className="reviewdashboard">
-          <div className="flex-grow-1 my-2" style={{ overflowY: "auto", maxHeight: "300px", minHeight: "300px" }}>
+          <h1 className='reviewsheader'>All Reviews</h1>
+          <div className="flex-grow-1 my-2" style={{ overflowY: "auto", maxHeight: "250px", minHeight: "250px" }}>
             {loaded && <ReviewList reviews={review} removeFromDom={removeFromDom} />}
           </div>
-          <hr/>
-          <div className="flex-grow-1 my-2" style={{ overflowY: "auto", maxHeight: "520px" }}>
-          <ReviewForm createNewReview={createNewReview}/>
+          <hr />
+          <h1 className='reviewsheader'>New Review</h1>
+          <div className="flex-grow-1 my-2" style={{ overflowY: "auto", maxHeight: "450px" }}>
+            <ReviewForm createNewReview={createNewReview} />
           </div>
         </div>
       </div>
