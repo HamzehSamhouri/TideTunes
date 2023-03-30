@@ -28,12 +28,22 @@ export default function Dashboard({ code }) {
   useEffect(()=>{
     axios.get('http://localhost:8000/api/reviews')
         .then(res=>{
-            setReview(res.data);
+            // console.log(res.data.results)
+            setReview(res.data.results);
             setLoaded(true);
         })
         .catch(err => console.error(err));
 },[]);
 
+
+// FILTER OUT AFTER DELETE
+const removeFromDom = reviewId => {
+  setReview(review.filter(review => review._id !== reviewId));
+}
+
+const createNewReview = (newReview) => {
+  setReview([...review, newReview]);
+}
 
   function chooseTrack(track) {
     setPlayingTrack(track)
@@ -103,8 +113,8 @@ export default function Dashboard({ code }) {
     </Container>
     </div>
     <div className="reviewdashboard">
-    {loaded && <ReviewList review={review}/>}
-    <ReviewForm/>
+    {loaded && <ReviewList reviews={review} removeFromDom = {removeFromDom}/>}
+    <ReviewForm createNewReview = {createNewReview}/>
     </div>
     </div>
       </div>

@@ -4,8 +4,10 @@ import axios from 'axios';
 const ReviewList = (props) => {
 // REMOVE FROM DOM 
     const { removeFromDom } = props;
+    // console.log(props.reviews)
 
-// BACKEND CALL TO DELETE ONE 
+
+    // BACKEND CALL TO DELETE ONE 
     const deleteReview = (reviewId) => {
         axios.delete('http://localhost:8000/api/review/' + reviewId)
             .then(res => {

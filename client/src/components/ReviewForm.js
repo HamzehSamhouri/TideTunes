@@ -22,7 +22,8 @@ const ReviewForm = (props) => {
             title, artist, category, rating, review
         })
             .then(res => {
-                console.log(res);
+                // console.log(res.data);
+                props.createNewReview(res.data);
             })
 
 // ERROR MESSAGES
