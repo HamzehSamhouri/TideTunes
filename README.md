@@ -14,7 +14,7 @@
 * [Contact](#contact)
 
 ## General Information
-Full stack music application designed for music enthusiasts to play and review their favorite tracks. Developed utilizing the ***Spotify API***, MongoDB, Express React and Node.
+Full stack music application designed for music enthusiasts to play and review their favorite tracks. Developed utilizing the ***Spotify API***, MongoDB, Express, React and Node.
 
 <br>
 
@@ -85,9 +85,9 @@ To do:
 
 - Incorporate results from ***Spotify API*** into review form for ease of use
 
-- Allow users to click on review title to play songs on ***Spotify API***
+- Allow users to click on title in review list and instantly play songs on the ***Spotify API***
 
-- Allow users to cycle through their Spotify Playlists
+- Allow users to cycle through their Spotify Playlists as well as create new ones
 
 <br>
 
