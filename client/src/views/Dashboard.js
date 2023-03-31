@@ -126,7 +126,7 @@ export default function Dashboard({ code }) {
           </div>
           <hr />
           <h1 className='reviewsheader'>New Review</h1>
-          <div className="flex-grow-1 my-2" style={{ overflowY: "auto", maxHeight: "450px" }}>
+          <div className="flex-grow-1 my-2" style={{ overflowY: "auto", maxHeight: "445px" }}>
             <ReviewForm createNewReview={createNewReview} />
           </div>
         </div>
