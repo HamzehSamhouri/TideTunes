@@ -54,6 +54,7 @@ Project requirements/dependencies for server and client are located within desig
 
         cd server
         npm install express cors mongoose dotenv spotify-web-api-node body-parser
+        cd server (new terminal)
         nodemon server.js
         nodemon reviewserver.js
 
